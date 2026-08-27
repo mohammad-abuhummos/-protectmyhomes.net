@@ -1,5 +1,6 @@
 import {
   isRouteErrorResponse,
+  Link,
   Links,
   Meta,
   Outlet,
@@ -9,8 +10,11 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import { SiteFooter } from "~/components/site-footer";
+import { SiteHeader } from "~/components/site-header";
 
 export const links: Route.LinksFunction = () => [
+  { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
@@ -19,7 +23,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
   },
 ];
 
@@ -42,34 +46,42 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <div className="flex min-h-screen flex-col">
+      <SiteHeader />
+      <main className="flex-1">
+        <Outlet />
+      </main>
+      <SiteFooter />
+    </div>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
-  let stack: string | undefined;
+  let title = "Something went wrong";
+  let message = "An unexpected error occurred. Please try again.";
 
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
-    details =
+    title = error.status === 404 ? "Page not found" : `Error ${error.status}`;
+    message =
       error.status === 404
-        ? "The requested page could not be found."
-        : error.statusText || details;
-  } else if (import.meta.env.DEV && error && error instanceof Error) {
-    details = error.message;
-    stack = error.stack;
+        ? "The page you're looking for doesn't exist or has been moved."
+        : error.statusText || message;
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
-    </main>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-navy-950 px-6 text-center">
+      <p className="text-sm font-semibold tracking-widest text-accent-400 uppercase">
+        ProtectMyHomes.net
+      </p>
+      <h1 className="mt-4 text-4xl font-extrabold text-white">{title}</h1>
+      <p className="mt-3 max-w-md text-slate-300">{message}</p>
+      <Link
+        to="/"
+        className="mt-8 rounded-lg bg-accent-500 px-6 py-3 font-semibold text-navy-950 transition hover:bg-accent-400"
+      >
+        Back to homepage
+      </Link>
+    </div>
   );
 }
