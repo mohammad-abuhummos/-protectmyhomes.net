@@ -81,9 +81,10 @@ export default function PrivacyPolicy() {
         <p>
           By submitting a quote request and checking the consent box, you
           provide your electronic signature and prior express written consent
-          to be contacted by ProtectMyHomes.net and its matched partners at
-          the phone number and email you provided — including by automatic
-          telephone dialing systems, artificial or prerecorded voice, and
+          to be contacted by ProtectMyHomes.net and its matched partners,
+          such as ADT, at the phone number and email you provided — including
+          by automatic telephone dialing systems, artificial or prerecorded
+          voice, and
           SMS/text messages — even if your number is on a federal, state, or
           internal Do Not Call list. Consent is not a condition of purchasing
           any goods or services. Message and data rates may apply. You may

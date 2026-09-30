@@ -33,6 +33,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Site is designed light-only; stops browser/extension auto-dark from repainting colors */}
+        <meta name="color-scheme" content="light" />
+        <meta name="darkreader-lock" />
         <Meta />
         <Links />
       </head>

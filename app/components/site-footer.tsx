@@ -77,13 +77,14 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-navy-800 pt-8 text-xs leading-relaxed text-slate-500">
+        <div className="mt-12 border-t border-navy-800 pt-8 text-xs leading-relaxed text-slate-400">
           <p>
             ProtectMyHomes.net is a free comparison and referral service. We
             are not a home security provider. By submitting a quote request,
             you agree to be contacted by ProtectMyHomes.net and up to four
-            home security partners at the phone number and email provided,
-            including by automated technology, prerecorded messages, and SMS.
+            home security partners such as ADT at the phone number and email
+            provided, including by automated technology, artificial or
+            prerecorded messages, and SMS.
             Consent is not a condition of purchase. Message and data rates may
             apply. See our{" "}
             <Link to="/privacy-policy" className="underline hover:text-white">

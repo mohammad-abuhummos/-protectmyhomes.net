@@ -102,7 +102,7 @@ export default function Partners() {
             </Link>
           </div>
 
-          <p className="mt-10 text-center text-xs text-slate-400">
+          <p className="mt-10 text-center text-xs text-slate-500">
             All trademarks and brand names are the property of their respective
             owners and are used for identification purposes only. Listing does
             not imply endorsement of ProtectMyHomes.net by these companies.

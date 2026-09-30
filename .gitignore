@@ -8,3 +8,6 @@
 
 # Captured leads (contains PII — never commit)
 /data/
+
+# Local screenshots
+/shots/

@@ -289,14 +289,14 @@ export default function Home() {
       {/* Partner strip */}
       <section className="border-b border-slate-100 bg-white py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs font-bold tracking-widest text-slate-400 uppercase">
+          <p className="text-center text-xs font-bold tracking-widest text-slate-500 uppercase">
             We compare quotes from America's top providers
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
             {partners.map((p) => (
               <span
                 key={p.name}
-                className="text-xl font-extrabold tracking-tight text-slate-300 transition hover:text-slate-500"
+                className="text-xl font-extrabold tracking-tight text-slate-500 transition hover:text-navy-950"
               >
                 {p.name}
               </span>

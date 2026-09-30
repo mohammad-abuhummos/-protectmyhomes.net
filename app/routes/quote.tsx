@@ -345,10 +345,10 @@ export default function Quote({ loaderData, actionData }: Route.ComponentProps) 
                   <span className="text-xs leading-relaxed text-slate-600">
                     By checking this box, I provide my electronic signature and
                     consent to be contacted by ProtectMyHomes.net and up to
-                    four home security partners at the phone number and email
-                    provided, including via automated dialing systems,
-                    prerecorded messages, and SMS/text, regarding home security
-                    offers. Consent is not a condition of purchase. Message and
+                    four home security partners such as ADT at the phone number
+                    and email provided, including via automated dialing systems,
+                    artificial or prerecorded messages, and SMS/text, regarding
+                    home security offers. Consent is not a condition of purchase. Message and
                     data rates may apply. I have read and agree to the{" "}
                     <Link to="/terms-of-service" className="underline">
                       Terms of Service
@@ -372,7 +372,7 @@ export default function Quote({ loaderData, actionData }: Route.ComponentProps) 
               >
                 {submitting ? "Matching you with providers…" : "Get My Free Quotes"}
               </button>
-              <p className="mt-4 text-center text-xs text-slate-400">
+              <p className="mt-4 text-center text-xs text-slate-500">
                 Your information is encrypted and never sold to anyone outside
                 our vetted partner network.
               </p>
